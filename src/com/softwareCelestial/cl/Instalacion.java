@@ -2,6 +2,7 @@ package com.softwareCelestial.cl;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 public class Instalacion {
 
@@ -9,21 +10,25 @@ public class Instalacion {
     private LocalDate fecha;
     private LocalTime hora;
     private String estado;
-    private Tarea tareas;
+    private ArrayList<Tarea> tareas;
     private Cliente solicitante;
+    private Producto productoInstalado;
+    private Version versionProducto;
 
 
     public Instalacion(){
 
     }
 
-    public Instalacion(String id, LocalDate fecha, LocalTime hora, String estado, Tarea tareas, Cliente solicitante) {
+    public Instalacion(String id, LocalDate fecha, LocalTime hora, String estado, ArrayList<Tarea> tareas, Cliente solicitante,Producto productoInstalado) {
         this.id = id;
         this.fecha = fecha;
         this.hora = hora;
         this.estado = estado;
         this.tareas = tareas;
         this.solicitante = solicitante;
+        this.productoInstalado = productoInstalado;
+        versionProducto = productoInstalado.getVersionActual();
     }
 
     public String getId() {
@@ -58,12 +63,12 @@ public class Instalacion {
         this.estado = estado;
     }
 
-    public Tarea getTareas() {
+    public ArrayList<Tarea> getTareas() {
         return tareas;
     }
 
-    public void setTareas(Tarea tareas) {
-        this.tareas = tareas;
+    public void addTareas(Tarea nuevaTarea) {
+        tareas.add(nuevaTarea);
     }
 
     public Cliente getSolicitante() {
@@ -82,7 +87,9 @@ public class Instalacion {
                 ", hora=" + hora +
                 ", estado='" + estado + '\'' +
                 ", tareas=" + tareas +
-                ", solicitante=" + solicitante +
+                ", solicitante=" + solicitante.toString() +
+                ", productoInstalado=" + productoInstalado.toString() +
+                ", versionProducto=" + versionProducto.toString() +
                 '}';
     }
 }
