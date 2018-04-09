@@ -10,18 +10,20 @@ public class Instalacion {
     private LocalTime hora;
     private String estado;
     private Tarea tareas;
+    private Cliente solicitante;
 
 
     public Instalacion(){
 
     }
 
-    public Instalacion(String id, LocalDate fecha, LocalTime hora, String estado, Tarea tareas) {
+    public Instalacion(String id, LocalDate fecha, LocalTime hora, String estado, Tarea tareas, Cliente solicitante) {
         this.id = id;
         this.fecha = fecha;
         this.hora = hora;
         this.estado = estado;
         this.tareas = tareas;
+        this.solicitante = solicitante;
     }
 
     public String getId() {
@@ -64,6 +66,14 @@ public class Instalacion {
         this.tareas = tareas;
     }
 
+    public Cliente getSolicitante() {
+        return solicitante;
+    }
+
+    public void setSolicitante(Cliente solicitante) {
+        this.solicitante = solicitante;
+    }
+
     @Override
     public String toString() {
         return "Instalacion{" +
@@ -72,6 +82,7 @@ public class Instalacion {
                 ", hora=" + hora +
                 ", estado='" + estado + '\'' +
                 ", tareas=" + tareas +
+                ", solicitante=" + solicitante +
                 '}';
     }
 }
