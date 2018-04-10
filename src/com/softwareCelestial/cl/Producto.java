@@ -1,9 +1,10 @@
 package com.softwareCelestial.cl;
+import java.awt.*;
 import java.io.File;
 
 public class Producto {
     private String nombre;
-    private File logo;
+    private Image logo;
     private String descripcion;
     private String idProducto;
     private Version versionActual;
@@ -11,7 +12,7 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(String nombre, File logo, String descripcion, String idProducto,Version versionActual) {
+    public Producto(String nombre, Image logo, String descripcion, String idProducto,Version versionActual) {
         this.nombre = nombre;
         this.logo = logo;
         this.descripcion = descripcion;
@@ -27,11 +28,11 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public File getLogo() {
+    public Image getLogo() {
         return logo;
     }
 
-    public void setLogo(File logo) {
+    public void setLogo(Image logo) {
         this.logo = logo;
     }
 
@@ -59,7 +60,7 @@ public class Producto {
         this.versionActual = versionActual;
     }
 
-    public void modificarProducto(String id, String nombre, File logo, String descripcion){
+    public void modificarProducto(String id, String nombre, Image logo, String descripcion){
         this.idProducto = id;
         this.nombre = nombre;
         this.logo = logo;

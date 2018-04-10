@@ -1,4 +1,5 @@
 package com.softwareCelestial.cl;
+import java.awt.*;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -8,7 +9,7 @@ public class Cliente {
     private String latitud;
     private String longitud;
     private String direccionExacta;
-    private File logo;
+    private Image logo;
     private ArrayList<String> telefonos;
     private Contacto contactoLider;
     private Contacto contactoTecnico;
@@ -16,7 +17,7 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(String razonSocial, String cedJuridica, String latitud, String longitud, String direccionExacta, File logo, ArrayList<String> telefonos, Contacto contactoLider, Contacto contactoTecnico) {
+    public Cliente(String razonSocial, String cedJuridica, String latitud, String longitud, String direccionExacta, Image logo, ArrayList<String> telefonos, Contacto contactoLider, Contacto contactoTecnico) {
         this.razonSocial = razonSocial;
         this.cedJuridica = cedJuridica;
         this.latitud = latitud;
@@ -68,11 +69,11 @@ public class Cliente {
         this.direccionExacta = direccionExacta;
     }
 
-    public File getLogo() {
+    public Image getLogo() {
         return logo;
     }
 
-    public void setLogo(File logo) {
+    public void setLogo(Image logo) {
         this.logo = logo;
     }
 
